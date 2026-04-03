@@ -16,28 +16,44 @@ export function Footer() {
               © {new Date().getFullYear()} {siteConfig.name}
             </p>
           </div>
-          <nav
-            className="flex flex-wrap gap-x-5 gap-y-2 sm:justify-end"
-            aria-label="Footer navigation"
-          >
-            {categories.map((c) =>
-              c.href ? (
-                <TextLink key={c.id} href={c.href} variant="default">
-                  {c.label}
-                </TextLink>
-              ) : (
-                <span
-                  key={c.id}
-                  className={classNames(
-                    "text-sm text-zinc-400",
-                    "select-none"
-                  )}
-                >
-                  {c.label}
-                </span>
-              )
-            )}
-          </nav>
+          <div className="flex flex-col items-start gap-8 sm:items-end">
+            <nav
+              className="flex flex-wrap gap-x-5 gap-y-2 sm:justify-end"
+              aria-label="Footer navigation"
+            >
+              {categories.map((c) =>
+                c.href ? (
+                  <TextLink key={c.id} href={c.href} variant="default">
+                    {c.label}
+                  </TextLink>
+                ) : (
+                  <span
+                    key={c.id}
+                    className={classNames(
+                      "text-sm text-zinc-400",
+                      "select-none"
+                    )}
+                  >
+                    {c.label}
+                  </span>
+                )
+              )}
+            </nav>
+            <nav
+              className="flex flex-wrap gap-x-5 gap-y-2 sm:justify-end"
+              aria-label="Site pages"
+            >
+              <TextLink href="/about" variant="default">
+                About
+              </TextLink>
+              <TextLink href="/contact" variant="default">
+                Contact
+              </TextLink>
+              <TextLink href="/privacy-policy" variant="default">
+                Privacy Policy
+              </TextLink>
+            </nav>
+          </div>
         </div>
       </div>
     </footer>
