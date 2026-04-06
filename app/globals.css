@@ -1,27 +1,95 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f6f6f7;
-  --foreground: #18181b;
+  --background: #f1f0ed;
+  --foreground: #0c0a09;
   --surface: #ffffff;
+  --surface-soft: #fdfcfa;
+  --surface-elevated: #ffffff;
+  --accent: #0d9488;
+  --accent-deep: #0f766e;
+  --accent-bright: #2dd4bf;
+  --accent-glow: color-mix(in oklab, var(--accent) 16%, transparent);
+  --accent-glow-strong: color-mix(in oklab, var(--accent) 22%, transparent);
+  --warm-spot: color-mix(in oklab, #ea580c 10%, transparent);
+  --vignette: color-mix(in oklab, #292524 4%, transparent);
+  /* Inset highlight on elevated cards */
+  --ring-inset-light: rgb(255 255 255 / 0.72);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-surface: var(--surface);
+  --color-accent: var(--accent);
+  --color-accent-deep: var(--accent-deep);
   --font-sans: var(--font-geist-sans);
+  --font-display: var(--font-outfit);
   --font-mono: var(--font-geist-mono);
-  /* Design system: soft elevation */
-  --shadow-ds-sm: 0 1px 3px 0 rgb(24 24 27 / 0.05),
-    0 1px 2px -1px rgb(24 24 27 / 0.04);
-  --shadow-ds-md: 0 6px 20px -6px rgb(24 24 27 / 0.08),
-    0 2px 8px -2px rgb(24 24 27 / 0.05);
+  --shadow-ds-sm: 0 1px 2px rgb(15 23 42 / 0.045),
+    0 2px 8px rgb(15 23 42 / 0.04);
+  --shadow-ds-md: 0 4px 12px rgb(15 23 42 / 0.055),
+    0 12px 40px rgb(15 23 42 / 0.09);
+  --shadow-ds-glow: 0 10px 40px -10px color-mix(in oklab, var(--accent) 32%, transparent),
+    0 4px 16px -4px color-mix(in oklab, var(--accent) 18%, transparent);
+  --shadow-ds-float: 0 24px 48px -20px rgb(15 23 42 / 0.12),
+    0 12px 24px -12px rgb(15 23 42 / 0.08);
+}
+
+@keyframes drift {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(2%, 1%) scale(1.03);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  /* 100vw full-bleed sections ignore classic scrollbar width; clip avoids x-scroll */
+  overflow-x: clip;
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  line-height: 1.5;
+  line-height: 1.55;
+  letter-spacing: -0.011em;
+  background-color: var(--background);
+  background-image: radial-gradient(
+      ellipse 130% 90% at 50% -35%,
+      var(--accent-glow-strong),
+      transparent 58%
+    ),
+    radial-gradient(
+      ellipse 75% 55% at 100% -5%,
+      var(--warm-spot),
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse 60% 50% at -5% 45%,
+      color-mix(in oklab, var(--accent) 6%, transparent),
+      transparent 52%
+    ),
+    radial-gradient(
+      ellipse 80% 60% at 100% 100%,
+      color-mix(in oklab, var(--accent-deep) 4%, transparent),
+      transparent 45%
+    );
+  background-attachment: fixed;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-outfit), var(--font-geist-sans), ui-sans-serif,
+    system-ui, sans-serif;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--accent) 32%, #fff);
+  color: var(--foreground);
 }

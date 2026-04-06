@@ -1,7 +1,8 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Outfit } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { Atmosphere } from "@/components/shared/Atmosphere";
 import { PageContainer } from "@/components/shared/PageContainer";
 import { WebsiteJsonLd } from "@/components/seo/WebsiteJsonLd";
 import { siteConfig } from "@/lib/site";
@@ -17,6 +18,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const outfit = Outfit({
+  variable: "--font-outfit",
+  subsets: ["latin"],
+});
+
 const SITE_DESCRIPTION =
   "Free CSS design tools for gradients, box shadows, border radius, color palettes, layout generators, and browser-based utilities — fast, no signup, copy-ready output.";
 
@@ -24,8 +30,8 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#fafafa" },
-    { media: "(prefers-color-scheme: dark)", color: "#18181b" },
+    { media: "(prefers-color-scheme: light)", color: "#f3f2f0" },
+    { media: "(prefers-color-scheme: dark)", color: "#0c0a09" },
   ],
 };
 
@@ -61,9 +67,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full`}
+      className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} h-full`}
     >
-      <body className="flex min-h-full flex-col antialiased">
+      <body className="relative flex min-h-full flex-col antialiased">
+        <Atmosphere />
         <WebsiteJsonLd />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-4LH7JE0XF5"
@@ -79,7 +86,7 @@ export default function RootLayout({
         </Script>
 
         <Header />
-        <main className="flex flex-1 flex-col">
+        <main className="relative z-10 flex flex-1 flex-col">
           <PageContainer>{children}</PageContainer>
         </main>
         <Footer />

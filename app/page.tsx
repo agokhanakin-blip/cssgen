@@ -40,7 +40,7 @@ export default function HomePage() {
 
       <section
         id="popular-css-tools"
-        className="scroll-mt-24 border-t border-zinc-200/90 pt-14 sm:scroll-mt-28 sm:pt-16"
+        className="scroll-mt-24 border-t border-zinc-200/80 pt-14 sm:scroll-mt-28 sm:pt-16"
         aria-labelledby="popular-tools-heading"
       >
         <SectionTitle id="popular-tools-heading">Popular CSS Tools</SectionTitle>
@@ -54,7 +54,7 @@ export default function HomePage() {
       </section>
 
       <section
-        className="mt-16 border-t border-zinc-200/90 pt-14 sm:mt-20 sm:pt-16"
+        className="mt-16 border-t border-zinc-200/80 pt-14 sm:mt-20 sm:pt-16"
         aria-labelledby="browse-categories-heading"
       >
         <SectionTitle id="browse-categories-heading">
@@ -77,7 +77,7 @@ export default function HomePage() {
       </div>
 
       <article
-        className="mt-16 border-t border-zinc-200/90 pt-14 text-sm leading-relaxed text-zinc-600 sm:mt-20 sm:pt-16"
+        className="mt-16 border-t border-zinc-200/80 pt-14 text-sm leading-relaxed text-zinc-600 sm:mt-20 sm:pt-16"
         aria-label="About these CSS generators"
       >
         <h2 className="sr-only">About these CSS generators</h2>
@@ -85,11 +85,11 @@ export default function HomePage() {
           <p>
             Whether you are styling a landing page or refining a component
             library, small CSS details add up. Our generators help you experiment
-            with <strong className="font-medium text-zinc-800">gradients, box shadows, border radius, and color palettes</strong> in the browser, then copy the exact values you need into your stylesheet or design tokens.
+            with <strong className="font-semibold text-teal-950">gradients, box shadows, border radius, and color palettes</strong> in the browser, then copy the exact values you need into your stylesheet or design tokens.
           </p>
           <p>
             Each tool focuses on one job so pages stay fast and easy to scan.
-            You can jump straight to the <a href={toolHref("gradient-generator")} className="font-medium text-zinc-800 underline decoration-zinc-300 underline-offset-4 hover:decoration-zinc-500">gradient generator</a>, explore <a href="/css-generators" className="font-medium text-zinc-800 underline decoration-zinc-300 underline-offset-4 hover:decoration-zinc-500">CSS generators</a> for shadows and corners, or use <a href="/color-tools" className="font-medium text-zinc-800 underline decoration-zinc-300 underline-offset-4 hover:decoration-zinc-500">color tools</a> when you need a cohesive palette.
+            You can jump straight to the <a href={toolHref("gradient-generator")} className="font-semibold text-teal-900 underline decoration-teal-300/80 underline-offset-4 hover:decoration-teal-500">gradient generator</a>, explore <a href="/css-generators" className="font-semibold text-teal-900 underline decoration-teal-300/80 underline-offset-4 hover:decoration-teal-500">CSS generators</a> for shadows and corners, or use <a href="/color-tools" className="font-semibold text-teal-900 underline decoration-teal-300/80 underline-offset-4 hover:decoration-teal-500">color tools</a> when you need a cohesive palette.
           </p>
           <p>
             We keep the interface minimal on purpose: fewer distractions mean

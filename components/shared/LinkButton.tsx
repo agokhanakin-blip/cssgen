@@ -10,9 +10,9 @@ type LinkButtonProps = Omit<ComponentProps<typeof Link>, "className"> & {
 
 const variants = {
   primary:
-    "border-zinc-900 bg-zinc-900 text-white shadow-ds-sm hover:border-zinc-800 hover:bg-zinc-800 hover:shadow-ds-md",
+    "border-transparent bg-gradient-to-br from-teal-500 via-teal-600 to-emerald-800 text-white shadow-lg shadow-teal-900/25 ring-1 ring-white/25 [box-shadow:inset_0_1px_0_0_rgb(255_255_255_/_0.22)] hover:from-teal-400 hover:via-teal-500 hover:to-emerald-700 hover:shadow-xl hover:shadow-teal-900/30",
   secondary:
-    "border-zinc-200/90 bg-[var(--surface)] text-zinc-800 shadow-ds-sm hover:border-zinc-300 hover:bg-zinc-50/90 hover:shadow-ds-md",
+    "border-zinc-200/70 bg-[color-mix(in_oklab,var(--surface)_96%,transparent)] text-zinc-800 shadow-ds-sm ring-1 ring-inset ring-white/60 backdrop-blur-sm hover:border-teal-200/80 hover:bg-teal-50/50 hover:shadow-ds-md",
 };
 
 /**
@@ -27,7 +27,8 @@ export function LinkButton({
   return (
     <Link
       className={classNames(
-        "inline-flex min-h-11 items-center justify-center rounded-lg border px-5 py-2.5 text-sm font-medium transition-[border-color,box-shadow,background-color,color,transform] hover:-translate-y-px active:translate-y-0 outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2",
+        "inline-flex min-h-12 items-center justify-center rounded-2xl border px-6 py-3 text-sm font-semibold tracking-tight transition-[border-color,box-shadow,background-color,color,transform] duration-300 hover:-translate-y-0.5 active:translate-y-0.5",
+        "outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]",
         variants[variant],
         className
       )}

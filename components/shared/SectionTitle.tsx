@@ -15,10 +15,16 @@ export function SectionTitle({ children, id, className }: SectionTitleProps) {
     <h2
       id={id}
       className={classNames(
-        "text-[0.6875rem] font-semibold uppercase tracking-[0.2em] text-zinc-500 sm:text-xs",
+        "flex flex-wrap items-center gap-3 text-[0.65rem] font-bold uppercase tracking-[0.24em] text-teal-900 sm:text-xs",
         className
       )}
     >
+      <span
+        className="relative h-px w-10 shrink-0 overflow-hidden rounded-full bg-gradient-to-r from-teal-500 via-emerald-400 to-transparent sm:w-12"
+        aria-hidden
+      >
+        <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-80" />
+      </span>
       {children}
     </h2>
   );

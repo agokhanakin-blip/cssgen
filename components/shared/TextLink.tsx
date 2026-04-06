@@ -17,11 +17,11 @@ export function TextLink({
   return (
     <Link
       className={classNames(
-        "rounded-sm text-sm outline-none transition-colors focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2",
+        "rounded-sm text-sm font-medium outline-none transition-colors focus-visible:ring-2 focus-visible:ring-teal-600/45 focus-visible:ring-offset-2",
         variant === "default" &&
-          "text-zinc-600 underline decoration-zinc-300/70 underline-offset-4 hover:text-zinc-900 hover:decoration-zinc-400",
+          "text-zinc-600 underline decoration-zinc-300/80 underline-offset-[5px] hover:text-teal-800 hover:decoration-teal-400/90",
         variant === "subtle" &&
-          "text-zinc-500 hover:text-zinc-800",
+          "text-zinc-500 hover:text-teal-900",
         className
       )}
       {...props}

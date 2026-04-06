@@ -2,7 +2,8 @@ import type { ToolSeoContentModel } from "@/data/toolSeoContent";
 import { classNames } from "@/utils/classNames";
 
 const sectionClass = "scroll-mt-20";
-const h2Class = "text-xl font-semibold tracking-tight text-zinc-900 sm:text-2xl";
+const h2Class =
+  "text-xl font-semibold tracking-tight text-zinc-950 sm:text-2xl";
 const bodyClass =
   "mt-3 space-y-3 text-sm leading-relaxed text-zinc-600 sm:text-base sm:leading-relaxed";
 const listClass =
@@ -22,7 +23,7 @@ export function ToolSeoArticle({ content, className }: ToolSeoArticleProps) {
   return (
     <article
       className={classNames(
-        "mt-14 max-w-3xl space-y-12 border-t border-zinc-200/90 pt-12 sm:mt-16 sm:space-y-14 sm:pt-14",
+        "mt-14 max-w-3xl space-y-12 border-t border-zinc-200/80 pt-12 sm:mt-16 sm:space-y-14 sm:pt-14",
         className
       )}
       aria-label="About this tool"
@@ -73,10 +74,15 @@ export function ToolSeoArticle({ content, className }: ToolSeoArticleProps) {
         <h2 id="tool-seo-faq" className={h2Class}>
           FAQ
         </h2>
-        <dl className="mt-6 space-y-8">
+        <dl className="mt-6 space-y-4">
           {content.faq.map((item, i) => (
-            <div key={i}>
-              <dt className="text-base font-medium text-zinc-900">{item.question}</dt>
+            <div
+              key={i}
+              className="rounded-2xl border border-zinc-200/65 bg-gradient-to-b from-white to-[var(--surface-soft)] px-4 py-4 shadow-ds-sm ring-1 ring-inset ring-white/60 sm:px-5 sm:py-5"
+            >
+              <dt className="text-base font-semibold text-zinc-900">
+                {item.question}
+              </dt>
               <dd className="mt-2 text-sm leading-relaxed text-zinc-600 sm:text-base sm:leading-relaxed">
                 {item.answer}
               </dd>
