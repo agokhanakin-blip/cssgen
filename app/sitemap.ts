@@ -36,9 +36,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry("/privacy-policy", "yearly", 0.55),
   ];
 
-  const toolPages: MetadataRoute.Sitemap = tools.map((t) =>
-    entry(toolHref(t.slug), "weekly", 0.9)
-  );
+  const toolPages: MetadataRoute.Sitemap = [...tools]
+    .sort((a, b) => a.slug.localeCompare(b.slug))
+    .map((t) => entry(toolHref(t.slug), "weekly", 0.9));
 
   return [...staticPages, ...toolPages];
 }

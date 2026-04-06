@@ -1,4 +1,6 @@
+const rawSiteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://cssgen.io";
+
 export const siteConfig = {
   name: "CSS Design Tools",
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://cssgen.io",
+  siteUrl: rawSiteUrl.replace(/\/+$/, ""),
 } as const;
