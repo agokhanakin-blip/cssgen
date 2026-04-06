@@ -46,21 +46,21 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full`}
     >
-      <body className="flex min-h-full flex-col antialiased">
-        <Script
-  src="https://www.googletagmanager.com/gtag/js?id=G-4LH7JE0XF5"
-  strategy="afterInteractive"
-/>
+    <body className="flex min-h-full flex-col antialiased">
+  <Script
+    src="https://www.googletagmanager.com/gtag/js?id=G-4LH7JE0XF5"
+    strategy="afterInteractive"
+  />
+  <Script id="google-analytics" strategy="afterInteractive">
+    {`
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-4LH7JE0XF5');
+    `}
+  </Script>
 
-<Script id="google-analytics" strategy="afterInteractive">
-  {`
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-4LH7JE0XF5');
-  `}
-</Script>
-        <Header />
+  <Header />
         <main className="flex flex-1 flex-col">
           <PageContainer>{children}</PageContainer>
         </main>
