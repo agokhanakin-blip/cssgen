@@ -5,7 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { PageContainer } from "@/components/shared/PageContainer";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
-
+import Script from "next/script";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
