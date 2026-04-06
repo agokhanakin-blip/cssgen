@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { ToolRelatedFooter } from "@/components/tools/ToolRelatedFooter";
 import { getToolBySlug, tools, type ToolSlug } from "@/data/tools";
+import { buildPageMetadata, fallbackToolDescription } from "@/lib/seo";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -13,6 +14,24 @@ const STATIC_TOOL_SLUGS = new Set([
   "box-shadow-generator",
   "border-radius-generator",
   "color-palette-generator",
+  "text-shadow-generator",
+  "clamp-generator",
+  "transition-generator",
+  "transform-generator",
+  "color-converter",
+  "image-resizer-rounder",
+  "css-unit-converter",
+  "meta-tag-generator",
+  "robots-txt-generator",
+  "base64-image-converter",
+  "filter-generator",
+  "flexbox-generator",
+  "grid-template-generator",
+  "aspect-ratio-generator",
+  "image-crop-tool",
+  "svg-generator",
+  "favicon-generator",
+  "logo-generator",
 ]);
 
 export function generateStaticParams() {
@@ -26,8 +45,18 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const tool = getToolBySlug(slug);
-  if (!tool) return {};
-  return { title: tool.title };
+  if (!tool) {
+    return {
+      title: "Tool not found",
+      robots: { index: false, follow: false, googleBot: { index: false } },
+    };
+  }
+  const path = `/tools/${tool.slug}` as `/${string}`;
+  return buildPageMetadata({
+    path,
+    title: tool.title,
+    description: fallbackToolDescription(tool.title),
+  });
 }
 
 export default async function ToolPage({ params }: PageProps) {

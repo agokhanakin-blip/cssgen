@@ -6,9 +6,9 @@ import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
   path: "/about",
-  title: "About",
+  title: "About CSS Design Tools",
   description:
-    "Learn about CSS Design Tools — free CSS generators for gradients, shadows, border radius, and color palettes.",
+    "Learn how CSS Design Tools helps you ship gradients, shadows, border radius, color palettes, layout utilities, and image helpers — free, in your browser.",
 });
 
 const sectionTitle =
@@ -75,6 +75,66 @@ export default function AboutPage() {
               </Link>{" "}
               — harmony modes, swatches, hex values, and optional CSS
               variables.
+            </li>
+            <li>
+              <Link href={toolHref("text-shadow-generator")} className={linkClass}>
+                Text Shadow Generator
+              </Link>{" "}
+              — configure offset, blur, and opacity for readable text effects.
+            </li>
+            <li>
+              <Link href={toolHref("clamp-generator")} className={linkClass}>
+                Clamp Generator
+              </Link>{" "}
+              — generate fluid typography with CSS clamp() for responsive sizing.
+            </li>
+            <li>
+              <Link href={toolHref("transition-generator")} className={linkClass}>
+                Transition Generator
+              </Link>{" "}
+              — build smooth transition declarations with timing and delay.
+            </li>
+            <li>
+              <Link href={toolHref("transform-generator")} className={linkClass}>
+                Transform Generator
+              </Link>{" "}
+              — compose translate, rotate, scale, and skew values visually.
+            </li>
+            <li>
+              <Link href={toolHref("color-converter")} className={linkClass}>
+                Color Converter
+              </Link>{" "}
+              — convert HEX, RGB, and HSL formats with quick copy actions.
+            </li>
+            <li>
+              <Link href={toolHref("image-resizer-rounder")} className={linkClass}>
+                Image Resizer & Round Corners
+              </Link>{" "}
+              — upload, resize, round corners, and download optimized images.
+            </li>
+            <li>
+              <Link href={toolHref("css-unit-converter")} className={linkClass}>
+                CSS Unit Converter
+              </Link>{" "}
+              — convert px to rem, em, and percentages instantly.
+            </li>
+            <li>
+              <Link href={toolHref("meta-tag-generator")} className={linkClass}>
+                Meta Tag Generator
+              </Link>{" "}
+              — draft title, description, and Open Graph tags for SEO.
+            </li>
+            <li>
+              <Link href={toolHref("robots-txt-generator")} className={linkClass}>
+                Robots.txt Generator
+              </Link>{" "}
+              — create crawl rules and sitemap references quickly.
+            </li>
+            <li>
+              <Link href={toolHref("base64-image-converter")} className={linkClass}>
+                Base64 Image Converter
+              </Link>{" "}
+              — convert image files into data URLs for web use.
             </li>
           </ul>
         </section>

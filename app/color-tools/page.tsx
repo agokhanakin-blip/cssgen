@@ -10,7 +10,7 @@ export const metadata: Metadata = buildPageMetadata({
   path: "/color-tools",
   title: "Color Tools",
   description:
-    "Explore color tools to generate palette ideas and reusable color sets for UI design.",
+    "Color palette generation, HEX/RGB/HSL conversion, and harmony presets — build cohesive UI palettes without leaving the browser.",
 });
 
 export default function ColorToolsPage() {

@@ -25,8 +25,8 @@ export const categories: CategoryNavItem[] = [
   {
     id: "ui-effects",
     label: "UI Effects",
-    href: null,
-    pitch: "Polish interfaces with depth and motion",
+    href: "/ui-effects",
+    pitch: "Polish interfaces with motion and visual depth",
   },
 ];
 

@@ -14,7 +14,7 @@ export const metadata: Metadata = buildPageMetadata({
   path: "/",
   title: "Free CSS Generators for Modern UI Design",
   description:
-    "Create gradients, box shadows, border radius values, and color palettes with free online CSS tools.",
+    "Browse free online CSS generators: gradients, shadows, border radius, palettes, clamp(), flexbox, grid, filters, and more. Live preview and copy-ready code.",
 });
 
 export default function HomePage() {

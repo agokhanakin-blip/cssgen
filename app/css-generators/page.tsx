@@ -10,7 +10,7 @@ export const metadata: Metadata = buildPageMetadata({
   path: "/css-generators",
   title: "CSS Generators",
   description:
-    "Use free CSS generators for gradients, box shadows, and border radius with instant previews and copy-ready code.",
+    "Free layout and style generators: gradients, border-radius, clamp(), flexbox, grid templates, aspect-ratio, SVG, favicons, logos, and image tools with live preview.",
 });
 
 export default function CssGeneratorsPage() {

@@ -6,7 +6,7 @@ export const metadata: Metadata = buildPageMetadata({
   path: "/privacy-policy",
   title: "Privacy Policy",
   description:
-    "How CSS Design Tools handles privacy, cookies, analytics, and advertising (including Google AdSense).",
+    "Privacy policy for CSS Design Tools: cookies, Google Analytics, third-party ads (including AdSense), and how we handle data in your browser session.",
 });
 
 const sectionTitle =

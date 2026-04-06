@@ -6,7 +6,7 @@ export const metadata: Metadata = buildPageMetadata({
   path: "/contact",
   title: "Contact",
   description:
-    "Get in touch with CSS Design Tools for feedback, suggestions, or commercial questions.",
+    "Contact CSS Design Tools for feedback, bug reports, feature ideas, or partnership questions. We read every message.",
 });
 
 const body = "space-y-4 text-sm leading-relaxed text-zinc-600 sm:text-base";

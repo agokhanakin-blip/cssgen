@@ -1,0 +1,26 @@
+import type { Metadata } from "next";
+import { PageHeader } from "@/components/shared/PageHeader";
+import { LogoGenerator } from "@/components/tools/logo/LogoGenerator";
+import { ToolRelatedFooter } from "@/components/tools/ToolRelatedFooter";
+import { ToolSeoArticle } from "@/components/tools/seo/ToolSeoArticle";
+import { getToolSeoContent } from "@/data/toolSeoContent";
+import { buildPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = buildPageMetadata({
+  path: "/tools/logo-generator",
+  title: "Logo Generator",
+  description:
+    "Create simple brand logos with icon, text, color, layout controls, and export SVG or PNG.",
+});
+
+export default function LogoGeneratorPage() {
+  const seo = getToolSeoContent("logo-generator");
+  return (
+    <>
+      <PageHeader title="Logo Generator" />
+      <LogoGenerator />
+      <ToolSeoArticle content={seo} />
+      <ToolRelatedFooter slug="logo-generator" />
+    </>
+  );
+}
