@@ -737,6 +737,43 @@ const imageCropTool: ToolSeoContentModel = {
   ],
 };
 
+const imageConverter: ToolSeoContentModel = {
+  whatIsTitle: "What is an Image Converter?",
+  whatIs: [
+    "This image converter changes uploaded JPG, PNG, and WEBP files into another image format in your browser.",
+    "It is useful when a platform requires a specific format or when you need smaller files for faster loading.",
+  ],
+  howToSteps: [
+    "Upload an image from your device.",
+    "Choose output format: PNG, JPG, or WEBP.",
+    "Adjust quality if you selected JPG or WEBP.",
+    "Click Convert, then download the new file.",
+  ],
+  exampleUsage:
+    "Convert a PNG screenshot to WEBP for web delivery, or switch WEBP to JPG for compatibility with older tools.",
+  tips: [
+    "Use PNG when you need lossless quality or transparency.",
+    "Use JPG for photos when file size matters.",
+    "Use WEBP for a strong quality-size balance on modern websites.",
+    "Start with quality around 80-90 for web use and compare results visually.",
+  ],
+  faq: [
+    {
+      question: "Does conversion happen on the server?",
+      answer: "No, conversion is done locally in your browser for faster and private processing.",
+    },
+    {
+      question: "Will image quality change after conversion?",
+      answer:
+        "Quality can change depending on output format and quality settings, especially with JPG and WEBP.",
+    },
+    {
+      question: "Can I batch convert multiple files?",
+      answer: "This version focuses on one file at a time for better reliability on all devices.",
+    },
+  ],
+};
+
 const svgGenerator: ToolSeoContentModel = {
   whatIsTitle: "What is an SVG Generator?",
   whatIs: [
@@ -866,6 +903,7 @@ export const TOOL_SEO_BY_SLUG: Record<ToolSlug, ToolSeoContentModel> = {
   "grid-template-generator": gridTemplateGenerator,
   "aspect-ratio-generator": aspectRatioGenerator,
   "image-crop-tool": imageCropTool,
+  "image-converter": imageConverter,
   "svg-generator": svgGenerator,
   "favicon-generator": faviconGenerator,
   "logo-generator": logoGenerator,

@@ -20,6 +20,7 @@ export type ToolSlug =
   | "grid-template-generator"
   | "aspect-ratio-generator"
   | "image-crop-tool"
+  | "image-converter"
   | "svg-generator"
   | "favicon-generator"
   | "logo-generator";
@@ -144,6 +145,11 @@ export const tools: Tool[] = [
   {
     slug: "image-crop-tool",
     title: "Image Crop Tool",
+    categoryId: "css-generators",
+  },
+  {
+    slug: "image-converter",
+    title: "Image Converter",
     categoryId: "css-generators",
   },
   {

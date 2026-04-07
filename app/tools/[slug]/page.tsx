@@ -29,6 +29,7 @@ const STATIC_TOOL_SLUGS = new Set([
   "grid-template-generator",
   "aspect-ratio-generator",
   "image-crop-tool",
+  "image-converter",
   "svg-generator",
   "favicon-generator",
   "logo-generator",
