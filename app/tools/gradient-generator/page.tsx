@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageHeader } from "@/components/shared/PageHeader";
+import { ToolPageHeader } from "@/components/shared/ToolPageHeader";
 import { GradientGenerator } from "@/components/tools/gradient/GradientGenerator";
 import { ToolSeoArticle } from "@/components/tools/seo/ToolSeoArticle";
 import { ToolRelatedFooter } from "@/components/tools/ToolRelatedFooter";
@@ -17,9 +17,9 @@ export default function GradientGeneratorPage() {
   const seo = getToolSeoContent("gradient-generator");
   return (
     <>
-      <PageHeader title="Gradient Generator" />
+      <ToolPageHeader slug="gradient-generator" title="Gradient Generator" />
       <GradientGenerator />
-      <ToolSeoArticle content={seo} />
+      <ToolSeoArticle slug="gradient-generator" content={seo} />
       <ToolRelatedFooter slug="gradient-generator" />
     </>
   );

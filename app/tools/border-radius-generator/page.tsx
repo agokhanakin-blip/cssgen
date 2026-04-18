@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageHeader } from "@/components/shared/PageHeader";
+import { ToolPageHeader } from "@/components/shared/ToolPageHeader";
 import { BorderRadiusGenerator } from "@/components/tools/border-radius/BorderRadiusGenerator";
 import { ToolSeoArticle } from "@/components/tools/seo/ToolSeoArticle";
 import { ToolRelatedFooter } from "@/components/tools/ToolRelatedFooter";
@@ -17,9 +17,9 @@ export default function BorderRadiusGeneratorPage() {
   const seo = getToolSeoContent("border-radius-generator");
   return (
     <>
-      <PageHeader title="Border Radius Generator" />
+      <ToolPageHeader slug="border-radius-generator" title="Border Radius Generator" />
       <BorderRadiusGenerator />
-      <ToolSeoArticle content={seo} />
+      <ToolSeoArticle slug="border-radius-generator" content={seo} />
       <ToolRelatedFooter slug="border-radius-generator" />
     </>
   );

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageHeader } from "@/components/shared/PageHeader";
+import { ToolPageHeader } from "@/components/shared/ToolPageHeader";
 import { ToolRelatedFooter } from "@/components/tools/ToolRelatedFooter";
 import { FlexboxGenerator } from "@/components/tools/flexbox/FlexboxGenerator";
 import { ToolSeoArticle } from "@/components/tools/seo/ToolSeoArticle";
@@ -17,9 +17,9 @@ export default function FlexboxGeneratorPage() {
   const seo = getToolSeoContent("flexbox-generator");
   return (
     <>
-      <PageHeader title="Flexbox Generator" />
+      <ToolPageHeader slug="flexbox-generator" title="Flexbox Generator" />
       <FlexboxGenerator />
-      <ToolSeoArticle content={seo} />
+      <ToolSeoArticle slug="flexbox-generator" content={seo} />
       <ToolRelatedFooter slug="flexbox-generator" />
     </>
   );

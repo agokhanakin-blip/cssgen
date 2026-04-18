@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageHeader } from "@/components/shared/PageHeader";
+import { ToolPageHeader } from "@/components/shared/ToolPageHeader";
 import { ToolRelatedFooter } from "@/components/tools/ToolRelatedFooter";
 import { GridTemplateGenerator } from "@/components/tools/grid-template/GridTemplateGenerator";
 import { ToolSeoArticle } from "@/components/tools/seo/ToolSeoArticle";
@@ -17,9 +17,9 @@ export default function GridTemplateGeneratorPage() {
   const seo = getToolSeoContent("grid-template-generator");
   return (
     <>
-      <PageHeader title="Grid Template Generator" />
+      <ToolPageHeader slug="grid-template-generator" title="Grid Template Generator" />
       <GridTemplateGenerator />
-      <ToolSeoArticle content={seo} />
+      <ToolSeoArticle slug="grid-template-generator" content={seo} />
       <ToolRelatedFooter slug="grid-template-generator" />
     </>
   );

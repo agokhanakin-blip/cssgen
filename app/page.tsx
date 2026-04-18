@@ -6,20 +6,31 @@ import { SectionTitle } from "@/components/shared/SectionTitle";
 import { ToolGrid } from "@/components/shared/ToolGrid";
 import { ValueProposition } from "@/components/shared/ValueProposition";
 import { ToolCard } from "@/components/tools/ToolCard";
+import { WebPageJsonLd } from "@/components/seo/WebPageJsonLd";
 import { categories } from "@/data/categories";
 import { toolHref, tools } from "@/data/tools";
 import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = buildPageMetadata({
-  path: "/",
+const HOME_PAGE = {
   title: "Free CSS Generators for Modern UI Design",
   description:
     "Browse free online CSS generators: gradients, shadows, border radius, palettes, clamp(), flexbox, grid, filters, and more. Live preview and copy-ready code.",
+} as const;
+
+export const metadata: Metadata = buildPageMetadata({
+  path: "/",
+  title: HOME_PAGE.title,
+  description: HOME_PAGE.description,
 });
 
 export default function HomePage() {
   return (
     <>
+      <WebPageJsonLd
+        path="/"
+        title={HOME_PAGE.title}
+        description={HOME_PAGE.description}
+      />
       <Hero
         title="Free CSS Generators for Modern UI Design"
         subtitle="Create gradients, shadows, border radius, and color palettes instantly with simple tools."

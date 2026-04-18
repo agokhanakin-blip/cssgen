@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { PageHeader } from "@/components/shared/PageHeader";
+import { ToolStructuredData } from "@/components/seo/ToolStructuredData";
+import { ToolPageHeader } from "@/components/shared/ToolPageHeader";
 import { ToolRelatedFooter } from "@/components/tools/ToolRelatedFooter";
-import { getToolBySlug, tools, type ToolSlug } from "@/data/tools";
-import { buildPageMetadata, fallbackToolDescription } from "@/lib/seo";
+import { ToolSeoArticle } from "@/components/tools/seo/ToolSeoArticle";
+import { getToolBySlug, toolHref, tools, type ToolSlug } from "@/data/tools";
+import { getToolSeoContent } from "@/data/toolSeoContent";
+import { absoluteUrl, buildPageMetadata, fallbackToolDescription } from "@/lib/seo";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -65,9 +68,21 @@ export default async function ToolPage({ params }: PageProps) {
   const tool = getToolBySlug(slug);
   if (!tool) notFound();
 
+  const seo = getToolSeoContent(tool.slug);
+  const canonicalUrl = absoluteUrl(toolHref(tool.slug));
+  const faq = seo.faq.length > 0 ? seo.faq : undefined;
+  const toolDescription = seo.whatIs[0] ?? fallbackToolDescription(tool.title);
+
   return (
     <>
-      <PageHeader title={tool.title} />
+      <ToolStructuredData
+        slug={tool.slug}
+        toolName={tool.title}
+        toolDescription={toolDescription}
+        canonicalUrl={canonicalUrl}
+        faq={faq}
+      />
+      <ToolPageHeader slug={tool.slug} title={tool.title} />
 
       <div
         className="min-h-[12rem] rounded-lg border border-dashed border-zinc-200/90 bg-[var(--surface)] p-8 text-center text-sm text-zinc-500 shadow-ds-sm"
@@ -76,6 +91,7 @@ export default async function ToolPage({ params }: PageProps) {
         Tool UI placeholder
       </div>
 
+      <ToolSeoArticle slug={tool.slug} content={seo} renderStructuredData={false} />
       <ToolRelatedFooter slug={tool.slug as ToolSlug} />
     </>
   );

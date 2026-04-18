@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageHeader } from "@/components/shared/PageHeader";
+import { ToolPageHeader } from "@/components/shared/ToolPageHeader";
 import { ToolRelatedFooter } from "@/components/tools/ToolRelatedFooter";
 import { ToolUsageNotice } from "@/components/tools/ToolUsageNotice";
 import { Base64ImageConverter } from "@/components/tools/base64-image/Base64ImageConverter";
@@ -18,10 +18,10 @@ export default function Base64ImageConverterPage() {
   const seo = getToolSeoContent("base64-image-converter");
   return (
     <>
-      <PageHeader title="Base64 Image Converter" />
+      <ToolPageHeader slug="base64-image-converter" title="Base64 Image Converter" />
       <ToolUsageNotice maxFileSizeMb={10} />
       <Base64ImageConverter />
-      <ToolSeoArticle content={seo} />
+      <ToolSeoArticle slug="base64-image-converter" content={seo} />
       <ToolRelatedFooter slug="base64-image-converter" />
     </>
   );

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageHeader } from "@/components/shared/PageHeader";
+import { ToolPageHeader } from "@/components/shared/ToolPageHeader";
 import { ToolRelatedFooter } from "@/components/tools/ToolRelatedFooter";
 import { AspectRatioGenerator } from "@/components/tools/aspect-ratio/AspectRatioGenerator";
 import { ToolSeoArticle } from "@/components/tools/seo/ToolSeoArticle";
@@ -17,9 +17,9 @@ export default function AspectRatioGeneratorPage() {
   const seo = getToolSeoContent("aspect-ratio-generator");
   return (
     <>
-      <PageHeader title="Aspect Ratio Generator" />
+      <ToolPageHeader slug="aspect-ratio-generator" title="Aspect Ratio Generator" />
       <AspectRatioGenerator />
-      <ToolSeoArticle content={seo} />
+      <ToolSeoArticle slug="aspect-ratio-generator" content={seo} />
       <ToolRelatedFooter slug="aspect-ratio-generator" />
     </>
   );

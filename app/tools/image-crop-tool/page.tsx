@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageHeader } from "@/components/shared/PageHeader";
+import { ToolPageHeader } from "@/components/shared/ToolPageHeader";
 import { ToolRelatedFooter } from "@/components/tools/ToolRelatedFooter";
 import { ToolUsageNotice } from "@/components/tools/ToolUsageNotice";
 import { ImageCropTool } from "@/components/tools/image-crop/ImageCropTool";
@@ -18,10 +18,10 @@ export default function ImageCropToolPage() {
   const seo = getToolSeoContent("image-crop-tool");
   return (
     <>
-      <PageHeader title="Image Crop Tool" />
+      <ToolPageHeader slug="image-crop-tool" title="Image Crop Tool" />
       <ToolUsageNotice />
       <ImageCropTool />
-      <ToolSeoArticle content={seo} />
+      <ToolSeoArticle slug="image-crop-tool" content={seo} />
       <ToolRelatedFooter slug="image-crop-tool" />
     </>
   );

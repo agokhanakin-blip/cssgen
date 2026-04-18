@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageHeader } from "@/components/shared/PageHeader";
+import { ToolPageHeader } from "@/components/shared/ToolPageHeader";
 import { BoxShadowGenerator } from "@/components/tools/box-shadow/BoxShadowGenerator";
 import { ToolSeoArticle } from "@/components/tools/seo/ToolSeoArticle";
 import { ToolRelatedFooter } from "@/components/tools/ToolRelatedFooter";
@@ -17,9 +17,9 @@ export default function BoxShadowGeneratorPage() {
   const seo = getToolSeoContent("box-shadow-generator");
   return (
     <>
-      <PageHeader title="Box Shadow Generator" />
+      <ToolPageHeader slug="box-shadow-generator" title="Box Shadow Generator" />
       <BoxShadowGenerator />
-      <ToolSeoArticle content={seo} />
+      <ToolSeoArticle slug="box-shadow-generator" content={seo} />
       <ToolRelatedFooter slug="box-shadow-generator" />
     </>
   );

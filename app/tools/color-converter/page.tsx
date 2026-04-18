@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageHeader } from "@/components/shared/PageHeader";
+import { ToolPageHeader } from "@/components/shared/ToolPageHeader";
 import { ToolRelatedFooter } from "@/components/tools/ToolRelatedFooter";
 import { ColorConverter } from "@/components/tools/color-converter/ColorConverter";
 import { ToolSeoArticle } from "@/components/tools/seo/ToolSeoArticle";
@@ -17,9 +17,9 @@ export default function ColorConverterPage() {
   const seo = getToolSeoContent("color-converter");
   return (
     <>
-      <PageHeader title="Color Converter" />
+      <ToolPageHeader slug="color-converter" title="Color Converter" />
       <ColorConverter />
-      <ToolSeoArticle content={seo} />
+      <ToolSeoArticle slug="color-converter" content={seo} />
       <ToolRelatedFooter slug="color-converter" />
     </>
   );

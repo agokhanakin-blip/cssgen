@@ -1,14 +1,21 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader } from "@/components/shared/PageHeader";
+import { SeoBreadcrumb } from "@/components/seo/SeoBreadcrumb";
+import { WebPageJsonLd } from "@/components/seo/WebPageJsonLd";
 import { toolHref } from "@/data/tools";
 import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = buildPageMetadata({
-  path: "/about",
+const PAGE = {
   title: "About CSS Design Tools",
   description:
     "Learn how CSS Design Tools helps you ship gradients, shadows, border radius, color palettes, layout utilities, and image helpers — free, in your browser.",
+} as const;
+
+export const metadata: Metadata = buildPageMetadata({
+  path: "/about",
+  title: PAGE.title,
+  description: PAGE.description,
 });
 
 const sectionTitle =
@@ -20,6 +27,18 @@ const linkClass =
 export default function AboutPage() {
   return (
     <>
+      <WebPageJsonLd
+        path="/about"
+        title={PAGE.title}
+        description={PAGE.description}
+      />
+      <SeoBreadcrumb
+        className="mb-6"
+        items={[
+          { name: "Home", href: "/" },
+          { name: "About", href: "/about" },
+        ]}
+      />
       <PageHeader
         title="About CSS Design Tools"
         description="Free CSS tools for developers and designers who want fast, copy-ready output without signing up."

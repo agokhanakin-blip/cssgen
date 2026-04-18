@@ -45,3 +45,6 @@ export function ToolRelatedFooter({ slug }: ToolRelatedFooterProps) {
     </div>
   );
 }
+
+/** Alias for clearer SEO-facing naming ("Related tools" section). */
+export { ToolRelatedFooter as RelatedTools };

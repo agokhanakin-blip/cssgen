@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageHeader } from "@/components/shared/PageHeader";
+import { ToolPageHeader } from "@/components/shared/ToolPageHeader";
 import { LogoGenerator } from "@/components/tools/logo/LogoGenerator";
 import { ToolRelatedFooter } from "@/components/tools/ToolRelatedFooter";
 import { ToolSeoArticle } from "@/components/tools/seo/ToolSeoArticle";
@@ -17,9 +17,9 @@ export default function LogoGeneratorPage() {
   const seo = getToolSeoContent("logo-generator");
   return (
     <>
-      <PageHeader title="Logo Generator" />
+      <ToolPageHeader slug="logo-generator" title="Logo Generator" />
       <LogoGenerator />
-      <ToolSeoArticle content={seo} />
+      <ToolSeoArticle slug="logo-generator" content={seo} />
       <ToolRelatedFooter slug="logo-generator" />
     </>
   );

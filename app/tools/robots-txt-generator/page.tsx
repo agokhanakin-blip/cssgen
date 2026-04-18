@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageHeader } from "@/components/shared/PageHeader";
+import { ToolPageHeader } from "@/components/shared/ToolPageHeader";
 import { ToolRelatedFooter } from "@/components/tools/ToolRelatedFooter";
 import { RobotsTxtGenerator } from "@/components/tools/robots-txt/RobotsTxtGenerator";
 import { ToolSeoArticle } from "@/components/tools/seo/ToolSeoArticle";
@@ -17,9 +17,9 @@ export default function RobotsTxtGeneratorPage() {
   const seo = getToolSeoContent("robots-txt-generator");
   return (
     <>
-      <PageHeader title="Robots.txt Generator" />
+      <ToolPageHeader slug="robots-txt-generator" title="Robots.txt Generator" />
       <RobotsTxtGenerator />
-      <ToolSeoArticle content={seo} />
+      <ToolSeoArticle slug="robots-txt-generator" content={seo} />
       <ToolRelatedFooter slug="robots-txt-generator" />
     </>
   );

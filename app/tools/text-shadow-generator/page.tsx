@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageHeader } from "@/components/shared/PageHeader";
+import { ToolPageHeader } from "@/components/shared/ToolPageHeader";
 import { ToolRelatedFooter } from "@/components/tools/ToolRelatedFooter";
 import { ToolSeoArticle } from "@/components/tools/seo/ToolSeoArticle";
 import { TextShadowGenerator } from "@/components/tools/text-shadow/TextShadowGenerator";
@@ -17,9 +17,9 @@ export default function TextShadowGeneratorPage() {
   const seo = getToolSeoContent("text-shadow-generator");
   return (
     <>
-      <PageHeader title="Text Shadow Generator" />
+      <ToolPageHeader slug="text-shadow-generator" title="Text Shadow Generator" />
       <TextShadowGenerator />
-      <ToolSeoArticle content={seo} />
+      <ToolSeoArticle slug="text-shadow-generator" content={seo} />
       <ToolRelatedFooter slug="text-shadow-generator" />
     </>
   );

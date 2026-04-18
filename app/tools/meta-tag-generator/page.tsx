@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageHeader } from "@/components/shared/PageHeader";
+import { ToolPageHeader } from "@/components/shared/ToolPageHeader";
 import { ToolRelatedFooter } from "@/components/tools/ToolRelatedFooter";
 import { MetaTagGenerator } from "@/components/tools/meta-tag/MetaTagGenerator";
 import { ToolSeoArticle } from "@/components/tools/seo/ToolSeoArticle";
@@ -17,9 +17,9 @@ export default function MetaTagGeneratorPage() {
   const seo = getToolSeoContent("meta-tag-generator");
   return (
     <>
-      <PageHeader title="Meta Tag Generator" />
+      <ToolPageHeader slug="meta-tag-generator" title="Meta Tag Generator" />
       <MetaTagGenerator />
-      <ToolSeoArticle content={seo} />
+      <ToolSeoArticle slug="meta-tag-generator" content={seo} />
       <ToolRelatedFooter slug="meta-tag-generator" />
     </>
   );

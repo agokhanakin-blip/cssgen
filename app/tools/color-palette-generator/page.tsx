@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageHeader } from "@/components/shared/PageHeader";
+import { ToolPageHeader } from "@/components/shared/ToolPageHeader";
 import { ColorPaletteGenerator } from "@/components/tools/color-palette/ColorPaletteGenerator";
 import { ToolSeoArticle } from "@/components/tools/seo/ToolSeoArticle";
 import { ToolRelatedFooter } from "@/components/tools/ToolRelatedFooter";
@@ -17,9 +17,9 @@ export default function ColorPaletteGeneratorPage() {
   const seo = getToolSeoContent("color-palette-generator");
   return (
     <>
-      <PageHeader title="Color Palette Generator" />
+      <ToolPageHeader slug="color-palette-generator" title="Color Palette Generator" />
       <ColorPaletteGenerator />
-      <ToolSeoArticle content={seo} />
+      <ToolSeoArticle slug="color-palette-generator" content={seo} />
       <ToolRelatedFooter slug="color-palette-generator" />
     </>
   );

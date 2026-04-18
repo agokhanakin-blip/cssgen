@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageHeader } from "@/components/shared/PageHeader";
+import { ToolPageHeader } from "@/components/shared/ToolPageHeader";
 import { ToolRelatedFooter } from "@/components/tools/ToolRelatedFooter";
 import { FilterGenerator } from "@/components/tools/filter/FilterGenerator";
 import { ToolSeoArticle } from "@/components/tools/seo/ToolSeoArticle";
@@ -17,9 +17,9 @@ export default function FilterGeneratorPage() {
   const seo = getToolSeoContent("filter-generator");
   return (
     <>
-      <PageHeader title="Filter Generator" />
+      <ToolPageHeader slug="filter-generator" title="Filter Generator" />
       <FilterGenerator />
-      <ToolSeoArticle content={seo} />
+      <ToolSeoArticle slug="filter-generator" content={seo} />
       <ToolRelatedFooter slug="filter-generator" />
     </>
   );

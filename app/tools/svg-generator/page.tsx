@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageHeader } from "@/components/shared/PageHeader";
+import { ToolPageHeader } from "@/components/shared/ToolPageHeader";
 import { ToolRelatedFooter } from "@/components/tools/ToolRelatedFooter";
 import { ToolSeoArticle } from "@/components/tools/seo/ToolSeoArticle";
 import { SvgGenerator } from "@/components/tools/svg-generator/SvgGenerator";
@@ -17,9 +17,9 @@ export default function SvgGeneratorPage() {
   const seo = getToolSeoContent("svg-generator");
   return (
     <>
-      <PageHeader title="SVG Generator" />
+      <ToolPageHeader slug="svg-generator" title="SVG Generator" />
       <SvgGenerator />
-      <ToolSeoArticle content={seo} />
+      <ToolSeoArticle slug="svg-generator" content={seo} />
       <ToolRelatedFooter slug="svg-generator" />
     </>
   );

@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/shared/PageHeader";
+import { SeoBreadcrumb } from "@/components/seo/SeoBreadcrumb";
+import { WebPageJsonLd } from "@/components/seo/WebPageJsonLd";
 import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = buildPageMetadata({
-  path: "/privacy-policy",
+const PAGE = {
   title: "Privacy Policy",
   description:
     "Privacy policy for CSS Design Tools: cookies, Google Analytics, third-party ads (including AdSense), and how we handle data in your browser session.",
+} as const;
+
+export const metadata: Metadata = buildPageMetadata({
+  path: "/privacy-policy",
+  title: PAGE.title,
+  description: PAGE.description,
 });
 
 const sectionTitle =
@@ -16,6 +23,18 @@ const body = "space-y-3 text-sm leading-relaxed text-zinc-600 sm:text-base";
 export default function PrivacyPolicyPage() {
   return (
     <>
+      <WebPageJsonLd
+        path="/privacy-policy"
+        title={PAGE.title}
+        description={PAGE.description}
+      />
+      <SeoBreadcrumb
+        className="mb-6"
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Privacy Policy", href: "/privacy-policy" },
+        ]}
+      />
       <PageHeader
         title="Privacy Policy"
         description="Last updated: April 2026. This policy explains how we collect, use, and share information when you use this website."

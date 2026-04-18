@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { Atmosphere } from "@/components/shared/Atmosphere";
 import { PageContainer } from "@/components/shared/PageContainer";
-import { WebsiteJsonLd } from "@/components/seo/WebsiteJsonLd";
+import { GlobalWebsiteJsonLd } from "@/components/seo/GlobalWebsiteJsonLd";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 import Script from "next/script";
@@ -23,8 +23,7 @@ const outfit = Outfit({
   subsets: ["latin"],
 });
 
-const SITE_DESCRIPTION =
-  "Free CSS design tools for gradients, box shadows, border radius, color palettes, layout generators, and browser-based utilities — fast, no signup, copy-ready output.";
+const SITE_DESCRIPTION = siteConfig.tagline;
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -71,7 +70,7 @@ export default function RootLayout({
     >
       <body className="relative flex min-h-full flex-col antialiased">
         <Atmosphere />
-        <WebsiteJsonLd />
+        <GlobalWebsiteJsonLd />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-4LH7JE0XF5"
           strategy="afterInteractive"

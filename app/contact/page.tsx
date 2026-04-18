@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/shared/PageHeader";
+import { SeoBreadcrumb } from "@/components/seo/SeoBreadcrumb";
+import { WebPageJsonLd } from "@/components/seo/WebPageJsonLd";
 import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = buildPageMetadata({
-  path: "/contact",
+const PAGE = {
   title: "Contact",
   description:
     "Contact CSS Design Tools for feedback, bug reports, feature ideas, or partnership questions. We read every message.",
+} as const;
+
+export const metadata: Metadata = buildPageMetadata({
+  path: "/contact",
+  title: PAGE.title,
+  description: PAGE.description,
 });
 
 const body = "space-y-4 text-sm leading-relaxed text-zinc-600 sm:text-base";
@@ -14,6 +21,18 @@ const body = "space-y-4 text-sm leading-relaxed text-zinc-600 sm:text-base";
 export default function ContactPage() {
   return (
     <>
+      <WebPageJsonLd
+        path="/contact"
+        title={PAGE.title}
+        description={PAGE.description}
+      />
+      <SeoBreadcrumb
+        className="mb-6"
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Contact", href: "/contact" },
+        ]}
+      />
       <PageHeader
         title="Contact"
         description="You can reach us for feedback or suggestions. We read every message, though we may not reply to all inquiries immediately."
