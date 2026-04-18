@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ToolPageHeader } from "@/components/shared/ToolPageHeader";
 import { ToolRelatedFooter } from "@/components/tools/ToolRelatedFooter";
+import { ToolPrimarySurface } from "@/components/tools/ToolPrimarySurface";
 import { ColorConverter } from "@/components/tools/color-converter/ColorConverter";
 import { ToolSeoArticle } from "@/components/tools/seo/ToolSeoArticle";
 import { getToolSeoContent } from "@/data/toolSeoContent";
@@ -18,7 +19,9 @@ export default function ColorConverterPage() {
   return (
     <>
       <ToolPageHeader slug="color-converter" title="Color Converter" />
+      <ToolPrimarySurface>
       <ColorConverter />
+      </ToolPrimarySurface>
       <ToolSeoArticle slug="color-converter" content={seo} />
       <ToolRelatedFooter slug="color-converter" />
     </>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ToolPageHeader } from "@/components/shared/ToolPageHeader";
 import { ToolRelatedFooter } from "@/components/tools/ToolRelatedFooter";
+import { ToolPrimarySurface } from "@/components/tools/ToolPrimarySurface";
 import { ToolUsageNotice } from "@/components/tools/ToolUsageNotice";
 import { ImageConverter } from "@/components/tools/image-converter/ImageConverter";
 import { ToolSeoArticle } from "@/components/tools/seo/ToolSeoArticle";
@@ -21,7 +22,9 @@ export default function ImageConverterPage() {
     <>
       <ToolPageHeader slug="image-converter" title="Image Converter" />
       <ToolUsageNotice maxFileSizeMb={10} />
+      <ToolPrimarySurface>
       <ImageConverter />
+      </ToolPrimarySurface>
       <ToolSeoArticle slug="image-converter" content={seo} />
       <ToolRelatedFooter slug="image-converter" />
     </>

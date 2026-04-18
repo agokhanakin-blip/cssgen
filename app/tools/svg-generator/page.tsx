@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ToolPageHeader } from "@/components/shared/ToolPageHeader";
 import { ToolRelatedFooter } from "@/components/tools/ToolRelatedFooter";
+import { ToolPrimarySurface } from "@/components/tools/ToolPrimarySurface";
 import { ToolSeoArticle } from "@/components/tools/seo/ToolSeoArticle";
 import { SvgGenerator } from "@/components/tools/svg-generator/SvgGenerator";
 import { getToolSeoContent } from "@/data/toolSeoContent";
@@ -18,7 +19,9 @@ export default function SvgGeneratorPage() {
   return (
     <>
       <ToolPageHeader slug="svg-generator" title="SVG Generator" />
+      <ToolPrimarySurface>
       <SvgGenerator />
+      </ToolPrimarySurface>
       <ToolSeoArticle slug="svg-generator" content={seo} />
       <ToolRelatedFooter slug="svg-generator" />
     </>

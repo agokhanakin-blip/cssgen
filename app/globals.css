@@ -93,3 +93,56 @@ h3 {
   background: color-mix(in oklab, var(--accent) 32%, #fff);
   color: var(--foreground);
 }
+
+.tool-surface {
+  position: relative;
+  isolation: isolate;
+}
+
+.tool-surface::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    color-mix(in oklab, var(--accent) 20%, #fff),
+    rgb(228 228 231 / 0.9)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.tool-surface :is(input, textarea, select) {
+  border-radius: 0.7rem;
+  border-color: rgb(212 212 216);
+  padding: 0.58rem 0.72rem;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease;
+}
+
+.tool-surface :is(input, textarea, select):focus-visible {
+  outline: none;
+  border-color: color-mix(in oklab, var(--accent) 60%, #fff);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 18%, transparent);
+}
+
+.tool-surface button {
+  transition:
+    background-color 170ms ease,
+    box-shadow 170ms ease,
+    transform 170ms ease,
+    border-color 170ms ease,
+    opacity 170ms ease;
+}
+
+.tool-surface button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}

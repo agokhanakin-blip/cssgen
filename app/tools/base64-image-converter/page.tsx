@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ToolPageHeader } from "@/components/shared/ToolPageHeader";
 import { ToolRelatedFooter } from "@/components/tools/ToolRelatedFooter";
+import { ToolPrimarySurface } from "@/components/tools/ToolPrimarySurface";
 import { ToolUsageNotice } from "@/components/tools/ToolUsageNotice";
 import { Base64ImageConverter } from "@/components/tools/base64-image/Base64ImageConverter";
 import { ToolSeoArticle } from "@/components/tools/seo/ToolSeoArticle";
@@ -20,7 +21,9 @@ export default function Base64ImageConverterPage() {
     <>
       <ToolPageHeader slug="base64-image-converter" title="Base64 Image Converter" />
       <ToolUsageNotice maxFileSizeMb={10} />
+      <ToolPrimarySurface>
       <Base64ImageConverter />
+      </ToolPrimarySurface>
       <ToolSeoArticle slug="base64-image-converter" content={seo} />
       <ToolRelatedFooter slug="base64-image-converter" />
     </>

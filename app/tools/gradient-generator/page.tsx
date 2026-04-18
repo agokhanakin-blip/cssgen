@@ -3,6 +3,7 @@ import { ToolPageHeader } from "@/components/shared/ToolPageHeader";
 import { GradientGenerator } from "@/components/tools/gradient/GradientGenerator";
 import { ToolSeoArticle } from "@/components/tools/seo/ToolSeoArticle";
 import { ToolRelatedFooter } from "@/components/tools/ToolRelatedFooter";
+import { ToolPrimarySurface } from "@/components/tools/ToolPrimarySurface";
 import { getToolSeoContent } from "@/data/toolSeoContent";
 import { buildPageMetadata } from "@/lib/seo";
 
@@ -18,7 +19,9 @@ export default function GradientGeneratorPage() {
   return (
     <>
       <ToolPageHeader slug="gradient-generator" title="Gradient Generator" />
+      <ToolPrimarySurface>
       <GradientGenerator />
+      </ToolPrimarySurface>
       <ToolSeoArticle slug="gradient-generator" content={seo} />
       <ToolRelatedFooter slug="gradient-generator" />
     </>

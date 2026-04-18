@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ToolPageHeader } from "@/components/shared/ToolPageHeader";
 import { ToolRelatedFooter } from "@/components/tools/ToolRelatedFooter";
+import { ToolPrimarySurface } from "@/components/tools/ToolPrimarySurface";
 import { ToolUsageNotice } from "@/components/tools/ToolUsageNotice";
 import { ImageResizerRounder } from "@/components/tools/image-resizer/ImageResizerRounder";
 import { ToolSeoArticle } from "@/components/tools/seo/ToolSeoArticle";
@@ -20,7 +21,9 @@ export default function ImageResizerRounderPage() {
     <>
       <ToolPageHeader slug="image-resizer-rounder" title="Image Resizer & Round Corners" />
       <ToolUsageNotice />
+      <ToolPrimarySurface>
       <ImageResizerRounder />
+      </ToolPrimarySurface>
       <ToolSeoArticle slug="image-resizer-rounder" content={seo} />
       <ToolRelatedFooter slug="image-resizer-rounder" />
     </>

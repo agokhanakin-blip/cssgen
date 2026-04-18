@@ -30,19 +30,28 @@ export function MetaTagGenerator() {
         <Field label="Canonical URL" value={url} onChange={setUrl} />
       </div>
 
-      <section className="rounded-lg border border-zinc-200/90 bg-white p-4 shadow-ds-sm">
+      <section className="rounded-xl border border-zinc-200/90 bg-white p-4 shadow-ds-sm sm:p-5">
         <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-zinc-500">
           Search preview
         </p>
-        <p className="truncate text-lg text-blue-700">{title}</p>
-        <p className="truncate text-sm text-emerald-700">{url}</p>
-        <p className="mt-1 text-sm text-zinc-600">{description}</p>
+        <div className="rounded-xl border border-zinc-200/80 bg-white px-4 py-3 shadow-[0_1px_2px_rgb(15_23_42_/_0.04)]">
+          <p className="truncate text-[13px] text-emerald-800">{url}</p>
+          <p className="mt-1 truncate text-[1.1rem] leading-snug text-[#1a0dab]">
+            {title}
+          </p>
+          <p className="mt-1 text-[0.94rem] leading-relaxed text-zinc-600">
+            {description}
+          </p>
+        </div>
       </section>
 
       <section className="border-t border-zinc-200/90 pt-8">
         <div className="mb-3 flex items-center justify-between">
           <p className="text-xs font-semibold uppercase tracking-wide text-zinc-500">HTML Output</p>
-          <button onClick={copy} className="rounded-lg bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-800">
+          <button
+            onClick={copy}
+            className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-white hover:bg-[var(--accent-deep)]"
+          >
             {copied ? "Copied!" : "Copy"}
           </button>
         </div>
@@ -66,7 +75,7 @@ function Field({
   textarea?: boolean;
 }) {
   return (
-    <label className="block rounded-lg border border-zinc-200/90 bg-white p-3 shadow-ds-sm">
+    <label className="block rounded-xl border border-zinc-200/90 bg-white p-3 shadow-ds-sm sm:p-4">
       <span className="mb-2 block text-xs font-semibold uppercase tracking-wide text-zinc-500">
         {label}
       </span>
@@ -75,13 +84,13 @@ function Field({
           value={value}
           onChange={(e) => onChange(e.target.value)}
           rows={3}
-          className="w-full rounded-md border border-zinc-200 px-2 py-2 text-sm"
+          className="w-full text-sm"
         />
       ) : (
         <input
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          className="w-full rounded-md border border-zinc-200 px-2 py-2 text-sm"
+          className="w-full text-sm"
         />
       )}
     </label>

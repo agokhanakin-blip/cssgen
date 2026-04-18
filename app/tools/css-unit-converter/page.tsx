@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ToolPageHeader } from "@/components/shared/ToolPageHeader";
 import { ToolRelatedFooter } from "@/components/tools/ToolRelatedFooter";
+import { ToolPrimarySurface } from "@/components/tools/ToolPrimarySurface";
 import { CssUnitConverter } from "@/components/tools/css-unit-converter/CssUnitConverter";
 import { ToolSeoArticle } from "@/components/tools/seo/ToolSeoArticle";
 import { getToolSeoContent } from "@/data/toolSeoContent";
@@ -18,7 +19,9 @@ export default function CssUnitConverterPage() {
   return (
     <>
       <ToolPageHeader slug="css-unit-converter" title="CSS Unit Converter" />
+      <ToolPrimarySurface>
       <CssUnitConverter />
+      </ToolPrimarySurface>
       <ToolSeoArticle slug="css-unit-converter" content={seo} />
       <ToolRelatedFooter slug="css-unit-converter" />
     </>

@@ -32,13 +32,31 @@ export function ToolPageHeader({
   const helperDescription =
     description ??
     "Adjust controls, preview instantly, and copy production-ready CSS in one flow.";
+  const heroEyebrow = eyebrow ?? "CSS Generator Tool";
 
   return (
-    <div className={className}>
-      {showBreadcrumb ? (
-        <SeoBreadcrumb items={items} className="mb-6" />
-      ) : null}
-      <PageHeader title={title} description={helperDescription} eyebrow={eyebrow} />
-    </div>
+    <section className={className}>
+      <div className="relative mb-10 overflow-hidden rounded-3xl border border-zinc-200/70 bg-gradient-to-br from-white via-[var(--surface-soft)] to-white px-4 py-6 shadow-ds-sm sm:px-6 sm:py-8">
+        <div
+          className="pointer-events-none absolute inset-0 opacity-35 [background-image:linear-gradient(to_right,rgb(24_24_27_/_0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgb(24_24_27_/_0.06)_1px,transparent_1px)] [background-size:34px_34px]"
+          aria-hidden
+        />
+        <div
+          className="pointer-events-none absolute -top-24 right-[-4.5rem] h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(13,148,136,0.2),transparent_62%)]"
+          aria-hidden
+        />
+        <div className="relative">
+          {showBreadcrumb ? (
+            <SeoBreadcrumb items={items} className="mb-5" />
+          ) : null}
+          <PageHeader
+            title={title}
+            description={helperDescription}
+            eyebrow={heroEyebrow}
+            className="mb-0"
+          />
+        </div>
+      </div>
+    </section>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ToolPageHeader } from "@/components/shared/ToolPageHeader";
 import { ToolRelatedFooter } from "@/components/tools/ToolRelatedFooter";
+import { ToolPrimarySurface } from "@/components/tools/ToolPrimarySurface";
 import { ToolUsageNotice } from "@/components/tools/ToolUsageNotice";
 import { FaviconGenerator } from "@/components/tools/favicon/FaviconGenerator";
 import { ToolSeoArticle } from "@/components/tools/seo/ToolSeoArticle";
@@ -20,7 +21,9 @@ export default function FaviconGeneratorPage() {
     <>
       <ToolPageHeader slug="favicon-generator" title="Favicon Generator" />
       <ToolUsageNotice maxFileSizeMb={10} />
+      <ToolPrimarySurface>
       <FaviconGenerator />
+      </ToolPrimarySurface>
       <ToolSeoArticle slug="favicon-generator" content={seo} />
       <ToolRelatedFooter slug="favicon-generator" />
     </>

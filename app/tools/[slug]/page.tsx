@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { ToolStructuredData } from "@/components/seo/ToolStructuredData";
 import { ToolPageHeader } from "@/components/shared/ToolPageHeader";
 import { ToolRelatedFooter } from "@/components/tools/ToolRelatedFooter";
+import { ToolPrimarySurface } from "@/components/tools/ToolPrimarySurface";
 import { ToolSeoArticle } from "@/components/tools/seo/ToolSeoArticle";
 import { getToolBySlug, toolHref, tools, type ToolSlug } from "@/data/tools";
 import { getToolSeoContent } from "@/data/toolSeoContent";
@@ -84,12 +85,14 @@ export default async function ToolPage({ params }: PageProps) {
       />
       <ToolPageHeader slug={tool.slug} title={tool.title} />
 
-      <div
-        className="min-h-[12rem] rounded-lg border border-dashed border-zinc-200/90 bg-[var(--surface)] p-8 text-center text-sm text-zinc-500 shadow-ds-sm"
-        aria-label="Tool workspace placeholder"
-      >
-        Tool UI placeholder
-      </div>
+      <ToolPrimarySurface>
+        <div
+          className="min-h-[12rem] rounded-lg border border-dashed border-zinc-200/90 bg-[var(--surface)] p-8 text-center text-sm text-zinc-500"
+          aria-label="Tool workspace placeholder"
+        >
+          Tool UI placeholder
+        </div>
+      </ToolPrimarySurface>
 
       <ToolSeoArticle slug={tool.slug} content={seo} renderStructuredData={false} />
       <ToolRelatedFooter slug={tool.slug as ToolSlug} />

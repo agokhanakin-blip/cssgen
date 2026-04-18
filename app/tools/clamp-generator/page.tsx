@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ToolPageHeader } from "@/components/shared/ToolPageHeader";
 import { ToolRelatedFooter } from "@/components/tools/ToolRelatedFooter";
+import { ToolPrimarySurface } from "@/components/tools/ToolPrimarySurface";
 import { ClampGenerator } from "@/components/tools/clamp/ClampGenerator";
 import { ToolSeoArticle } from "@/components/tools/seo/ToolSeoArticle";
 import { getToolSeoContent } from "@/data/toolSeoContent";
@@ -18,7 +19,9 @@ export default function ClampGeneratorPage() {
   return (
     <>
       <ToolPageHeader slug="clamp-generator" title="Clamp Generator" />
+      <ToolPrimarySurface>
       <ClampGenerator />
+      </ToolPrimarySurface>
       <ToolSeoArticle slug="clamp-generator" content={seo} />
       <ToolRelatedFooter slug="clamp-generator" />
     </>

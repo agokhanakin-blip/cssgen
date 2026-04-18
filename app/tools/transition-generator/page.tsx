@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ToolPageHeader } from "@/components/shared/ToolPageHeader";
 import { ToolRelatedFooter } from "@/components/tools/ToolRelatedFooter";
+import { ToolPrimarySurface } from "@/components/tools/ToolPrimarySurface";
 import { ToolSeoArticle } from "@/components/tools/seo/ToolSeoArticle";
 import { TransitionGenerator } from "@/components/tools/transition/TransitionGenerator";
 import { getToolSeoContent } from "@/data/toolSeoContent";
@@ -18,7 +19,9 @@ export default function TransitionGeneratorPage() {
   return (
     <>
       <ToolPageHeader slug="transition-generator" title="Transition Generator" />
+      <ToolPrimarySurface>
       <TransitionGenerator />
+      </ToolPrimarySurface>
       <ToolSeoArticle slug="transition-generator" content={seo} />
       <ToolRelatedFooter slug="transition-generator" />
     </>

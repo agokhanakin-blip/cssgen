@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ToolPageHeader } from "@/components/shared/ToolPageHeader";
 import { ToolRelatedFooter } from "@/components/tools/ToolRelatedFooter";
+import { ToolPrimarySurface } from "@/components/tools/ToolPrimarySurface";
 import { ToolSeoArticle } from "@/components/tools/seo/ToolSeoArticle";
 import { TransformGenerator } from "@/components/tools/transform/TransformGenerator";
 import { getToolSeoContent } from "@/data/toolSeoContent";
@@ -18,7 +19,9 @@ export default function TransformGeneratorPage() {
   return (
     <>
       <ToolPageHeader slug="transform-generator" title="Transform Generator" />
+      <ToolPrimarySurface>
       <TransformGenerator />
+      </ToolPrimarySurface>
       <ToolSeoArticle slug="transform-generator" content={seo} />
       <ToolRelatedFooter slug="transform-generator" />
     </>
