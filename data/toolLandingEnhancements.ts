@@ -2,6 +2,7 @@ import type { CSSProperties } from "react";
 import {
   getRelatedTools,
   getToolBySlug,
+  tools,
   toolHref,
   type ToolSlug,
 } from "@/data/tools";
@@ -666,7 +667,13 @@ export function pickLandingExamples(
   examples: LandingExample[],
   limit = LANDING_EXAMPLE_LIMIT
 ): LandingExample[] {
-  if (examples.length <= limit) return examples;
+  const normalizeLabels = (items: LandingExample[]) =>
+    items.map((item, i) => ({
+      ...item,
+      previewLabel: item.previewLabel.replace(/\d+$/, String(i + 1)),
+    }));
+
+  if (examples.length <= limit) return normalizeLabels(examples);
   const picks = [0, 1, 3, 5, 7, 9];
   const selected: LandingExample[] = [];
   for (const idx of picks) {
@@ -680,7 +687,7 @@ export function pickLandingExamples(
       if (!selected.includes(item)) selected.push(item);
     }
   }
-  return selected.slice(0, limit);
+  return normalizeLabels(selected.slice(0, limit));
 }
 
 /**
@@ -693,4 +700,58 @@ export function getToolExamplesPath(slug: ToolSlug): `/${string}` {
     .replace(/-tool$/, "")
     .replace(/^-+|-+$/g, "");
   return `/css-${base}-examples`;
+}
+
+export function getToolExamplesSlug(slug: ToolSlug): string {
+  return getToolExamplesPath(slug).slice(1);
+}
+
+export function getAllToolExamplesSlugs(): string[] {
+  return tools.map((tool) => getToolExamplesSlug(tool.slug));
+}
+
+export function getAllToolExamplesPaths(): `/${string}`[] {
+  return tools.map((tool) => getToolExamplesPath(tool.slug));
+}
+
+export function getToolSlugFromExamplesSlug(
+  examplesSlug: string
+): ToolSlug | null {
+  const normalized = examplesSlug.replace(/^\/+/, "");
+  const match = tools.find((tool) => getToolExamplesSlug(tool.slug) === normalized);
+  return match?.slug ?? null;
+}
+
+/**
+ * Large example collection used by dedicated `/css-*-examples` pages.
+ * Keeps tool landing pages concise while expanding long-tail SEO coverage.
+ */
+export function getExpandedToolExamples(
+  slug: ToolSlug,
+  minimum = 20
+): LandingExample[] {
+  const base = getToolLandingEnhancement(slug).examples;
+  if (base.length >= minimum) return base;
+
+  const expanded: LandingExample[] = [];
+  let round = 0;
+
+  while (expanded.length < minimum) {
+    for (const item of base) {
+      if (expanded.length >= minimum) break;
+      const suffix = round === 0 ? "" : ` Variant ${round + 1}`;
+      expanded.push({
+        ...item,
+        title: `${item.title}${suffix}`,
+        description:
+          round === 0
+            ? item.description
+            : `${item.description} This variant is tuned for alternative layout density and component rhythm.`,
+        previewLabel: `${item.previewLabel.replace(/\d+$/, "").trim()} ${expanded.length + 1}`,
+      });
+    }
+    round += 1;
+  }
+
+  return expanded;
 }

@@ -66,7 +66,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} h-full`}
+      className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} h-full scroll-smooth`}
     >
       <body className="relative flex min-h-full flex-col antialiased">
         <Atmosphere />

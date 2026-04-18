@@ -70,6 +70,43 @@ export function ToolSeoArticle({
         )}
         aria-label="About this tool"
       >
+        <section className={sectionClass} aria-labelledby="tool-seo-explore-more">
+          <h2 id="tool-seo-explore-more" className={h2Class}>
+            Explore more
+          </h2>
+          <p className="mt-3 text-sm leading-relaxed text-zinc-600 sm:text-base sm:leading-relaxed">
+            Once you finish tweaking the tool, jump to examples, FAQ, or related generators.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            <Link
+              href="#tool-seo-css-examples"
+              className="rounded-full border border-zinc-200 bg-transparent px-3 py-1.5 text-sm font-medium text-zinc-700 hover:bg-zinc-50"
+            >
+              View examples
+            </Link>
+            <Link
+              href="#tool-seo-faq"
+              className="rounded-full border border-zinc-200 bg-transparent px-3 py-1.5 text-sm font-medium text-zinc-700 hover:bg-zinc-50"
+            >
+              Open FAQ
+            </Link>
+            <Link
+              href="#related-tools-section"
+              className="rounded-full border border-zinc-200 bg-transparent px-3 py-1.5 text-sm font-medium text-zinc-700 hover:bg-zinc-50"
+            >
+              Related tools
+            </Link>
+            {examplePagePath ? (
+              <Link
+                href={examplePagePath}
+                className="rounded-full border border-zinc-200 bg-transparent px-3 py-1.5 text-sm font-medium text-zinc-700 hover:bg-zinc-50"
+              >
+                View all examples
+              </Link>
+            ) : null}
+          </div>
+        </section>
+
         {enhancement ? (
           <section className={sectionClass} aria-labelledby="tool-seo-intent">
             <h2 id="tool-seo-intent" className={h2Class}>

@@ -23,7 +23,10 @@ export function ToolRelatedFooter({ slug }: ToolRelatedFooterProps) {
   const categoryHref = category?.href ?? null;
 
   return (
-    <div className="mt-12 space-y-10 border-t border-zinc-200/80 pt-10">
+    <div
+      id="related-tools-section"
+      className="mt-12 space-y-10 border-t border-zinc-200/80 pt-10"
+    >
       {categoryHref && category ? (
         <TextLink href={categoryHref} variant="default">
           ← {category.label}

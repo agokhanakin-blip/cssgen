@@ -29,13 +29,16 @@ export function ToolPageHeader({
     name: item.name,
     href: item.href,
   }));
+  const helperDescription =
+    description ??
+    "Adjust controls, preview instantly, and copy production-ready CSS in one flow.";
 
   return (
     <div className={className}>
       {showBreadcrumb ? (
         <SeoBreadcrumb items={items} className="mb-6" />
       ) : null}
-      <PageHeader title={title} description={description} eyebrow={eyebrow} />
+      <PageHeader title={title} description={helperDescription} eyebrow={eyebrow} />
     </div>
   );
 }

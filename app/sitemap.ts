@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { getAllToolExamplesPaths } from "@/data/toolLandingEnhancements";
 import { toolHref, tools } from "@/data/tools";
 import { FUTURE_SEO_ROUTES, STATIC_SEO_ROUTES } from "@/lib/seo/routes";
 import { siteConfig } from "@/lib/site";
@@ -47,5 +48,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .sort((a, b) => a.slug.localeCompare(b.slug))
     .map((t) => entry(toolHref(t.slug), "weekly", 0.9, lastModified));
 
-  return [...staticPages, ...toolPages];
+  const examplePages: MetadataRoute.Sitemap = [...getAllToolExamplesPaths()]
+    .sort((a, b) => a.localeCompare(b))
+    .map((path) => entry(path, "weekly", 0.75, lastModified));
+
+  const deduped = new Map<string, MetadataRoute.Sitemap[number]>();
+  for (const item of [...staticPages, ...toolPages, ...examplePages]) {
+    deduped.set(item.url, item);
+  }
+
+  return [...deduped.values()];
 }
