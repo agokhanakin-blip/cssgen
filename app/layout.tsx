@@ -72,6 +72,12 @@ export default function RootLayout({
         <Atmosphere />
         <GlobalWebsiteJsonLd />
         <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9201160426236771"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+        <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-4LH7JE0XF5"
           strategy="afterInteractive"
         />
